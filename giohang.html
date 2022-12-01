@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo"> <a href=""><img src="assets\img/low-res-logo (3).png" alt="" style="width: 150px;" ></a>  
+            </div>
+            <!--Begin Nav-->
+            <ul id="nav">
+                <li><a href="trangchu.html" target="_blank">Trang chủ</a></li>
+                <li><a href="sanpham.html" target="_blank">Sản phẩm</a></li>
+                <li>
+                    <a href="">Tham gia <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnav">
+                        <li><a href="dangnhap.html" target="_blank">Đăng nhập</a></li>
+                        <li><a href="dangki.html" target="_blank">Đăng kí</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="lienhe.html" target="_blank">Liên hệ <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnav">
+                        <li><a href="">Góp ý</a></li>
+                        <li><a href="">Bảo hành</a></li>
+                        <li><a href="">Đổi trả</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--End Nav-->
+
+            <!--Begin Search Button-->
+                <div class="search_button">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="search_button">
+                    <a href="giohang.html"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+            <!--End Search Button-->
+        </div>
+        <div id="donhang" >
+            <h1>Chi Tiết Đơn Hàng</h1>
+          <table id="cartDetail" border="2px" width="100%" >
+          <thead>
+            <tr>
+                <th>Mẫu sản phẩm</th> <th>Tên sản phẩm</th>
+                <th>Số lượng</th> <th>Giá</th> <th>Thành Tiền</th>
+                <th> </th>
+              </tr>
+            <tbody id="sanphamGH"></tbody>
+            <!-- <tr>
+              <th>Mẫu sản phẩm</th> <th>Tên sản phẩm</th>
+              <th>Số lượng</th> <th>Giá</th> <th>Thành Tiền</th>
+              <th> </th>
+            </tr>
+            <tr>
+                <th><img src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="" width="200px" height="200px"></th> <th>Sản phẩm 1</th>
+                <th>10</th> <th>300.000đ</th> <th>3.000.000đ</th>
+                <th> <Button>Xóa</Button></th>
+            </tr>
+            <tr>
+                <th><img src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="" width="200px" height="200px"></th> <th>Sản phẩm 2</th>
+                <th>5</th> <th>200.000đ</th> <th>1.000.000đ</th>
+                <th> <Button>Xóa</Button></th>
+            </tr>
+            <tr>
+                <th><img src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="" width="200px" height="200px"></th> <th>Sản phẩm 3</th>
+                <th>2</th> <th>150.000đ</th> <th>500.000đ</th>
+                <th> <Button>Xóa</Button></th>
+            </tr> -->
+          </thead>
+          
+        </table>
+        <br>
+        <div id="hoadon">
+            <h2 align="center">Hóa đơn</h2>
+            <b>Tổng tiền</b> = <span id="tongtien"> <b></b></span> <br>
+            <b>Chiết khấu</b> = <span id="chietkhau"><b></b></span> <br>
+            <b>Tổng số tiền</b> = <span id="tongtiencuoi"><b></b></span>
+        </div>
+          
+            <br>
+            <div id="btnGiohang">
+                <button type="submit">Xác Nhận Đơn Hàng</button>
+            </div>
+          
+          
+        </div>
+        
+
+        <div id="footer">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+                <p class="w3-medium">Thực hiện bởi nhóm 2</p>
+        </div>
+    </div>
+    <script>
+        show_cart();
+    </script>
+</body>
+
+</html>

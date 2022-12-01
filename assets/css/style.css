@@ -1,0 +1,427 @@
+/*reset css*/
+
+*{
+    /* emmet */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/*
+1. Vi tri
+2. Kich thuoc
+3. Mau sac
+4. Kieu dang  
+*/
+
+/* #main {
+
+} */
+
+#header {
+    height: 60px;
+    background-color: rgb(178, 57, 57);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#logo {
+    position: relative;
+    display: inline-block;
+    top : 10px;
+    width: 10%;
+    height: 70px;
+}
+
+#header img {
+	width: 38px;
+	height: 36px;
+    background-image: url();
+	background-size: contain;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+  
+    
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+#nav li a {
+    text-decoration: none;
+    line-height: 60px;
+    padding: 0 24px;
+    display: block;
+}
+#nav .subnav li:hover, #nav > li:hover > a {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* #nav li:hover a  {
+    
+    
+} */
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a {
+    color: rgb(0, 0, 0);
+    width: 150px;
+}
+
+#header .search_button {
+    float: right;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    line-height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    
+}
+.search_button i{
+    margin-left: 15px;
+   
+}
+#header .search_button:hover {
+    background-color: #f44336;
+}
+#footer {
+    text-align: center;
+}
+/* hết phần chung: header, footer
+/* #slider {
+    min-height: 900px;
+    background-color: #333;
+} */
+/* CSS sản phẩm*/
+
+h1 { 	
+	margin: 12px 0 16px;		
+	font-size: 35px; 	 
+	line-height: 34px;	 
+    color: rgb(178, 57, 57);;
+	text-align:center;
+	text-transform: uppercase;
+}
+
+.maingiohang{
+    background-color: rgba(255, 122, 122, 0.752);
+    margin: 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.maingiohang2{
+    background-color: rgba(255, 122, 122, 0.752);
+    margin: 20px 20px;
+
+}
+.danhmuc{
+    font-size: 25px;
+    padding-left: 25px;
+    padding-bottom: 50px;
+    margin: 2px;
+    border: #000 solid 2px;
+    background-color: #ccc;
+}
+.danhmuc2{
+    font-size: 25px;
+    padding-left: 100px;
+    border: #000 solid 2px;
+    background-color: #ccc;
+}
+#shownaunnuong , #showdientu, #showvesinh{
+    margin-left: 30px;
+}
+.sanpham{
+
+    break-before: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.sanpham2{
+    break-before: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.product{
+    font-size: 25px;
+    margin: 0px;
+    background-color: rgb(237, 237, 237);
+    border: #000 solid 2px;
+    text-align: center;
+    margin: 2px;
+    padding-bottom: 5px;
+    height: max-content;
+    width: 99%;
+
+}
+
+.product2{
+    font-size: 18px;
+    background-color:  rgb(237, 237, 237);
+    border: #000 solid 2px;
+    text-align: center;
+    margin: 2px;
+    padding-bottom: 5px;
+    height: max-content;
+    width: 99%;
+
+}
+h2{
+    margin-top: 20px;
+}
+.imgProduct{
+    border: #000 solid 1px;
+    margin-top: 30px;
+    height: 180px;
+    width: 94%;
+}
+.imgProduct:hover{
+    border:rgb(178, 57, 57) solid 3px ;
+}
+
+
+.decProduct{
+    font-size: 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: left;
+}
+hr{
+    width: 90%;
+    margin: auto;
+    
+}
+.Cost{
+    color: #f44336;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.Cost:hover{
+    margin-left: 0px;
+    animation: cost1 2s infinite ;
+    animation-delay: 0ms;
+}
+@keyframes cost1{
+    0%{ margin-left: 0px;}
+    25%{ margin-left: 30px;}
+    75%{ margin-left: -30px;}
+    100%{ margin-left: 0px;}
+}
+.Buy{
+    border-radius: 10px;
+    background-color: #f44336;
+    font-size: large;
+    margin: 10px 10px;
+    width: 180px;
+    height: 30px;
+}
+.Buy:hover{
+    font-size: 25px;
+    width: 70%;
+    height: 50px;
+    margin: 0px;
+
+}
+.inputD{
+    margin-top: 10px;
+}
+.inputSL{
+    font-size: 23px;
+    width: 250px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+
+/* CSS trang chủ*/
+#sliderTC {
+    margin-top: 60px;
+    padding-top: 30%;
+    background:url('/assets/img/banner-web-1.jpg') top center / cover no-repeat;
+}
+
+#contentTC {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.trendingTC{
+    position: top center;
+    width: 40%;
+    margin: 40px;
+}
+
+#top-sellerTC {
+    margin-top: 60px;
+    position: top center;
+    height: auto;
+    padding-left: 50px;
+}
+
+/* #content {
+
+} */
+/*CSS đăng nhập, đăng kí*/
+#contentDNDK {
+    min-height: 796px;
+    background-color: #333;
+}
+#contentDNDK form{
+    width: 100%;
+    height: auto;
+    padding-top:100px;
+    padding-left: 30%;
+    padding-right: 30%;
+    background-clip: content-box;
+    background-color: #fff;
+    font-size: 22px;
+}
+form .title-nameDNDK{
+    font-weight: 800;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+    padding-top: 20px;
+}
+.user , .pass , .name , .phone , .email , .repass{
+    display:grid;
+    grid-template-columns: 120px auto 20px;
+    padding: 15px 30px;
+}
+.submitDNDK{
+    display:grid;
+    padding: 20px 30px;
+    grid-template-columns: auto 120px;
+    font-size: 15px;
+    align : right;
+}
+
+#contentLH{
+    background-color: #ccc;
+    height: auto;
+    padding-top:100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-clip: content-box;
+}
+#contentLH h2{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#contentLH form#user{
+    display:grid;
+    padding: 0px 10px;
+    grid-template-columns: auto auto;
+    font-size: 20px;
+}
+
+#contentLH form input{
+    height: 30px;
+    margin: 5px;
+}
+
+#contentLH select{
+    margin: 10px 15px;
+    grid-template-columns: auto auto;
+    font-size: 15px;
+    height: 30px;
+    width: 200px;
+}
+#contentLH input[type="submit"]
+{
+    margin-left: 0px;
+    width: 50px;
+}
+/* Gop Y */
+#contentLH form#gopY{
+    margin: 0px 15px;
+    width: auto;
+}
+
+#contentLH form#gopY textarea{
+    width: 100%;
+    height: 250px;
+}
+/* Bao Hanh */
+#contentLH form#baoHanh{
+    margin: 0px 15px;
+}
+#contentLH form#baoHanh #TTSP{
+    display:grid;
+    grid-template-columns: auto auto;
+}
+#contentLH form#baoHanh #TTSP input{
+    margin-left: 0px;
+    margin-right: 10px;
+}
+#contentLH form#baoHanh textarea{
+    width: 100%;
+    height: 200px;
+}
+/*Trang đơn hàng*/
+
+#donhang{
+    font-size: 25px;
+    margin: 100px 80px;
+    padding: auto;
+}
+#cartDetail{
+    border: rgb(178, 57, 57) solid 2px;
+}
+#hoadon{
+    padding: 1%;
+    border: rgb(178, 57, 57) solid 2px;
+}
+#hoadon h2{
+    margin: 0 0;
+}
+#btnGiohang button{
+    border: #000 solid 2px;
+    background-color: #f44336;
+    color: rgb(255, 255, 255);
+    border-radius:10px ;
+    padding: 5px;
+    margin: auto;
+    top: 30px;
+    font-size: 25px;
+    width:max-content;
+    height: 5%;
+    margin-left: 43%;
+    margin-right: 43%;
+
+}

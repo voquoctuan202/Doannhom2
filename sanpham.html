@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="/assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="main" onload="ready()">
+        <header id="header" >
+            <div id="logo"> <a href=""><img src="assets\img/low-res-logo (3).png" alt="" style="width: 150px;" ></a>  
+            </div>
+            <ul id="nav">
+                <li><a href="trangchu.html" target="_blank">Trang chủ</a></li>
+                <li><a href="sanpham.html" target="_blank">Sản phẩm</a></li>
+                <li>
+                    <a href="">Tham gia <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnav">
+                        <li><a href="dangnhap.html" target="_blank">Đăng nhập</a></li>
+                        <li><a href="dangki.html" target="_blank">Đăng kí</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="lienhe.html" target="_blank">Liên hệ <i class="fa fa-caret-down"></i></a>
+                    <ul class="subnav">
+                        <li><a href="">Góp ý</a></li>
+                        <li><a href="">Bảo hành</a></li>
+                        <li><a href="">Đổi trả</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--End Nav-->
+
+            <!--Begin Search Button-->
+                <div class="search_button">
+                    <i id="search-icon" class="fa fa-search"></i>
+                </div>
+                <div class="search_button">
+                    <a id="cart-icon" href="giohang.html"><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+            <!--End Search Button-->
+        </header>
+        <h1 style="padding-top: 60px;">Sản phẩm</h1>
+        <div id="mainsanpham" class="maingiohang2">
+            
+            <div id='danhmucsanpham' class="danhmuc">
+             <ul>  
+                <h2 style="margin-left: 13%; color: rgb(178, 57, 57); ">Danh mục</h2>
+                <li onclick="showNauNuong()" ><a id="naunuong" >Dụng cụ nấu nướng</a> <i id="iconNN" class="fa fa-caret-down"></i></li>
+                <div id="shownaunnuong">
+                    <a onclick="showNoiChao()">- Nồi - chảo</a> <br>
+                    <a onclick="showMuongDua()">- Muỗng - đũa - giá</a>
+                </div>
+                <script>
+                    $('#shownaunnuong').hide();
+                </script>
+                <li onclick="showDienTu()"><a id="dientu"  >Đồ điện tử</a> <i id="iconDT" class="fa fa-caret-down"></i></li>
+                <div id="showdientu">
+                    <a onclick="showNoiDien()">- Nồi cơm điện - Nồi nướng - Bếp điện</a> <br>
+                    <a onclick="showMayDien()">- Máy rửa chén - Máy xay sinh tố</a>
+                </div>
+                <script>
+                    $('#showdientu').hide();
+                </script>
+                <li onclick="showVeSinh()"><a id="vesinh" >Dụng cụ vệ sinh</a> <i id="iconVS" class="fa fa-caret-down"></i></li>   
+                <div id="showvesinh">
+                    <a onclick="showDungCu()">- Các loại dụng cụ</a> <br>
+                    <a onclick="showDungDich()">- Các loại dung dịch</a>
+                </div>  
+                <script>
+                    $('#showvesinh').hide();
+                </script>      
+             </ul>
+             <br>
+            </div>
+            <div id='viewsanpham' class="sanpham2">
+                <div id="prod1" class="product">
+                    <h2 id="tensp1" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp1" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp1" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp1"class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+                        <Button onclick="add_cart('idsp1')" class="Buy" >Mua</Button>
+                        <a id='idsp1' style="color: rgb(237, 237, 237);">0</a>
+                    <br>
+                    <div id="inputsp1" class="inputD">
+                        Số lượng: <input id="slsp1" class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod2" class="product">
+                    <h2 id="tensp2" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp2" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp2" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp2" class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+        
+                        <Button onclick="add_cart('idsp2');" class="Buy" >Mua</Button>
+                        <a id="idsp2" style="color: rgb(237, 237, 237);"></a>
+    
+                    <br>
+                    <div id="inputsp2" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod3" class="product">
+                    <h2 id="tensp3" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp3" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp3" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp3" class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+                    <Button onclick="add_cart('idsp3');" class="Buy" >Mua</Button>
+                        <a id="idsp3" style="color: rgb(237, 237, 237);"></a>
+                    <br>
+                    <div id="inputsp3" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod4" class="product">
+                    <h2 id="tensp4" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp4" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp4" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp4" class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+                    <Button onclick="add_cart('idsp4');" class="Buy" >Mua</Button>
+                        <a id="idsp4" style="color: rgb(237, 237, 237);"></a>
+                    <br>
+                    <div id="inputsp4" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod5" class="product">
+                    <h2 id="tensp5" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp5" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp5" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp5" class="Cost" style="text-align:center"> XXXXX</p>
+                    <hr>
+                    <Button onclick="add_cart('idsp5');" class="Buy" >Mua</Button>
+                        <a id="idsp5" style="color: rgb(237, 237, 237);"></a>
+                    <br>
+                    <div id="inputsp5" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod6" class="product">
+                    <h2 id="tensp6" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp6" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp6" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp6" class="Cost" style="text-align:center"> XXXXX</p>
+                    <hr>
+                    <Button onclick="add_cart('idsp6');" class="Buy" >Mua</Button>
+                        <a id="idsp6" style="color: rgb(237, 237, 237);"></a>
+                    <br>
+                    <div id="inputsp6" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod7" class="product">
+                    <h2 id="tensp7" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp7" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp7" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp7" class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+                    <Button onclick="add_cart('idsp7');" class="Buy" >Mua</Button>
+                        <a id="idsp7" style="color: rgb(237, 237, 237);"></a>
+                    <br>
+                    <div id="inputsp7" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+                <div id="prod8" class="product">
+                    <h2 id="tensp8" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp8" class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp8" class="decProduct">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp8"  class="Cost" style="text-align:center">XXXXX</p>
+                    <hr>
+                
+                        <Button  onclick="add_cart('idsp8');" class="Buy" >Mua</Button>
+                        <a id="idsp8" style="color: rgb(237, 237, 237);"></a>
+                    
+                    <br>
+                    <div id="inputsp8" class="inputD">
+                        Số lượng: <input class="inputSL" type="number" min="0" max="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="slider">
+
+        </div>
+
+        <div id="content">
+
+        </div>
+
+        <div id="footer">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+                <p class="w3-medium">Thực hiện bởi nhóm 2</p>
+        </div>
+    
+</body>
+
+
+</html>
