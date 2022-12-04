@@ -125,6 +125,15 @@ html {
 } */
 /* CSS sản phẩm*/
 
+#lang{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+#lang img{
+    size: 1.5em;
+    border: #f8f8f8 solid 2px;
+}
 h1 { 	
 	margin: 12px 0 16px;		
 	font-size: 35px; 	 
@@ -159,6 +168,15 @@ h1 {
     border: #000 solid 2px;
     background-color: #ccc;
 }
+/* #quangcao{
+    border-radius: 20px;
+    width: 90%;
+    height:400px;
+    background-color: rgb(255, 255, 255);
+    animation: quangcao 5s ;
+} */
+
+
 #shownaunnuong , #showdientu, #showvesinh{
     margin-left: 30px;
 }
@@ -182,8 +200,12 @@ h1 {
     margin: 2px;
     padding-bottom: 5px;
     height: max-content;
+    min-height: 600px;
     width: 99%;
 
+}
+.product h2{
+    min-height: 85px;
 }
 
 .product2{
@@ -194,9 +216,14 @@ h1 {
     margin: 2px;
     padding-bottom: 5px;
     height: max-content;
+    min-height: 600px;
     width: 99%;
 
 }
+.product2 h2{
+    min-height: 85px;
+}
+
 h2{
     margin-top: 20px;
 }
@@ -212,6 +239,7 @@ h2{
 
 
 .decProduct{
+    min-height: 100px;
     font-size: 22px;
     margin-top: 20px;
     margin-left: 10px;
@@ -232,7 +260,7 @@ hr{
 }
 .Cost:hover{
     margin-left: 0px;
-    animation: cost1 2s infinite ;
+    animation: cost1 2s initial ;
     animation-delay: 0ms;
 }
 @keyframes cost1{
@@ -419,9 +447,9 @@ form .title-nameDNDK{
     margin: auto;
     top: 30px;
     font-size: 25px;
-    width:max-content;
-    height: 5%;
-    margin-left: 43%;
+    width:300px;
+    height: 50px;
+    margin-left: 41%;
     margin-right: 43%;
 
 }
