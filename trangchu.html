@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="/assets/js/sanphamJS.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./assets/js/trangchuJS.js" defer></script>
 </head>
 <body>
     <div id="main">
@@ -16,26 +22,26 @@
             </div>
             <!--Begin Nav-->
             <ul id="nav">
-                <li><a href="trangchu.html" target="_blank">Trang chủ</a></li>
-                <li><a href="sanpham.html" target="_blank">Sản phẩm</a></li>
+                <li><a href="trangchu.html" target="_blank" class="char_menu1">Trang chủ</a></li>
+                <li><a href="sanpham.html" target="_blank" class="char_menu2">Sản phẩm</a></li>
                 <li>
-                    <a href="">Tham gia <i class="fa fa-caret-down"></i></a>
+                    <a href="" class="char_menu3">Tham gia <i class="fa fa-caret-down"></i></a>
                     <ul class="subnav">
-                        <li><a href="dangnhap.html" target="_blank">Đăng nhập</a></li>
-                        <li><a href="dangki.html" target="_blank">Đăng kí</a></li>
+                        <li><a href="dangnhap.html" target="_blank" class="char_menu4">Đăng nhập</a></li>
+                        <li><a href="dangki.html" target="_blank" class="char_menu5">Đăng kí</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="lienhe.html" target="_blank">Liên hệ <i class="fa fa-caret-down"></i></a>
-                    <ul class="subnav">
-                        <li><a href="">Góp ý</a></li>
-                        <li><a href="">Bảo hành</a></li>
-                        <li><a href="">Đổi trả</a></li>
-                    </ul>
+                    <a href="lienhe.html" target="_blank" class="char_menu6">Liên hệ</a>
                 </li>
             </ul>
             <!--End Nav-->
 
+            <div class="langs">
+                        <a href="#" language="english" class="active lan" onclick="langUS('TC') ;">ENG</a>
+                        <a href="#" language="vietnamese" class="lan  " onclick="langVN('TC');">VN</a>
+
+            </div>
             <!--Begin Search Button-->
                 <div class="search_button">
                     <i class="fa fa-search"></i>
@@ -43,55 +49,96 @@
                 <div class="search_button">
                     <a href="giohang.html"><i class="fa fa-shopping-cart"></i></a>
                 </div>
+            <div>
+               
             </div>
             <!--End Search Button-->
         </div>
-        
+         <!--Begin Slider-->
         <div id="sliderTC">
-            
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="/assets/img/banner-web-1.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets/img/banner-web-3.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets/img/banner-web-4.png" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
         </div>
-
-        <div id="contentTC">
-            <h1>Thương hiệu nổi bật</h1>
+         <!--End Slider-->
+        <div id="contentTC" >
+            <h1 class="heading1">Thương hiệu nổi bật</h1>
             <div class="trend">
-                <img src="/assets/img/banner-web-1.jpg" alt="" class="trendingTC">
-                <img src="/assets/img/banner-web-3.jpg" alt="" class="trendingTC">
+                <img src="./assets/img/banner-web-1.jpg" alt="" class="trendingTC">
+                <img src="./assets/img/banner-web-3.jpg" alt="" class="trendingTC">
             </div>
         </div>
 
-        <div id="top-sellerTC">
-            <h1>
+        <div id="top-sellerTC" >
+            <h1 class="heading2">
                 Sản phẩm bán chạy
             </h1>
-            <div class="sanpham">
-                <div class="product">
-                    <h2>Tên sản phẩm </h2>
-                    <img class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
-                    <p class="decProduct">Mô tả cở bản sản phẩm</p>
-                    <p class="Cost">Giá: XXXXX</p>
+            <div class="sanphamTC">
+                <div id="prod1" class="productTC">
+                    <h2 id="tensp1" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp1" class="imgProductTC" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp1" class="decProductTC">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp1"class="CostTC" style="text-align:center">XXXXX</p>
+                    <hr>
+                       
+                </div>
+                <div id="prod2" class=productTC>
+                    <h2 id="tensp2" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp2" class="imgProductTC" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp2" class="decProductTC">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp2" class="CostTC" style="text-align:center">XXXXX</p>
+                    <hr>
+        
+        
                     
                 </div>
-                <div class="product">
-                    <h2>Tên sản phẩm </h2>
-                    <img class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
-                    <p class="decProduct">Mô tả cở bản sản phẩm </p>
-                    <p class="Cost">Giá: XXXXX</p>
-                    
+                <div id="prod3" class=productTC>
+                    <h2 id="tensp3" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp3" class="imgProductTC" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp3" class="decProductTC">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp3" class="CostTC" style="text-align:center">XXXXX</p>
+                    <hr>
+                   
                 </div>
-                <div class="product">
-                    <h2>Tên sản phẩm </h2>
-                    <img class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
-                    <p class="decProduct">Mô tả cở bản sản phẩm</p>
-                    <p class="Cost">Giá: XXXXX</p>
-                    
-                </div>
-                <div class="product">
-                    <h2>Tên sản phẩm </h2>
-                    <img class="imgProduct" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
-                    <p class="decProduct">Mô tả cở bản sản phẩm</p>
-                    <p class="Cost">Giá: XXXXX</p>
+                <div id="prod4" class=productTC>
+                    <h2 id="tensp4" style="color: rgb(178, 57, 57);">Tên sản phẩm </h2>
+                    <img id="hinhsp4" class="imgProductTC" src="/assets/img/1024px-Logo_Dai_hoc_Can_Tho.svg.png" alt="">
+                    <p id="motasp4" class="decProductTC">Mô tả cở bản sản phẩm</p>
+                    <hr>
+                    <p id="giasp4" class="CostTC" style="text-align:center">XXXXX</p>
+                    <hr>
+
                 </div>
             </div>
+            <script>
+                showMayDien();
+            </script>
         </div>
 
         <div id="footer">

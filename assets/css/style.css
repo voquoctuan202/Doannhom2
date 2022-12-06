@@ -204,6 +204,9 @@ h1 {
     width: 99%;
 
 }
+.product:hover{
+    background-color: rgb(255, 255, 255);
+}
 .product h2{
     min-height: 85px;
 }
@@ -219,6 +222,9 @@ h1 {
     min-height: 600px;
     width: 99%;
 
+}
+.product2:hover{
+    background-color: rgb(255, 255, 255);
 }
 .product2 h2{
     min-height: 85px;
@@ -295,10 +301,27 @@ hr{
 }
 
 /* CSS trang chủ*/
+.lan {
+    text-decoration: none;
+    line-height: 60px;
+    padding: 20px 20px;
+    color: white;
+}
+
+.lan:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.langs {
+    display: inline-block;
+    float: right;
+    text-decoration: none; 
+    text-align: 60px;
+}
 #sliderTC {
     margin-top: 60px;
-    padding-top: 30%;
-    background:url('/assets/img/banner-web-1.jpg') top center / cover no-repeat;
+    z-index: -5555;
 }
 
 #contentTC {
@@ -311,12 +334,65 @@ hr{
     width: 40%;
     margin: 40px;
 }
-
+.heading1, .heading2{
+    color:  #f44336; ;
+}
+.heading1{
+    font-size: 45px;
+    font-weight: bold;
+}
+.heading2{
+    font-size: 35px;
+    font-weight: bold;
+}
 #top-sellerTC {
     margin-top: 60px;
     position: top center;
     height: auto;
     padding-left: 50px;
+}
+.sanphamTC{
+    break-before: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.productTC{
+    font-size: 25px;
+    margin: 0px;
+    background-color: rgb(237, 237, 237);
+    border: #f44336 solid 3px;
+    text-align: center;
+    margin: 2px;
+    padding-bottom: 5px;
+    height: max-content;
+    min-height: 600px;
+    width: 99%;
+
+}
+.productTC:hover{
+    background-color: rgb(255, 255, 255);
+}
+.productTC h2{
+    margin-top: 20px;
+    min-height: 45px;
+}
+.imgProductTC{
+    border: #000 solid 1px;
+    margin-top: 30px;
+    height: 200px;
+    width: 94%;
+}
+.imgProductTC:hover{
+    border:rgb(178, 57, 57) solid 3px ;
+}
+.decProductTC{
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: left;
+    min-height:100px ;
+}
+.CostTC{
+    margin-top: 20px;
 }
 
 /* #content {

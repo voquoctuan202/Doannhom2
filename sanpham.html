@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sản phẩm</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/sanphamJS.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,12 +30,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="lienhe.html" target="_blank"><span id="lienhe" class="mutilang"></span> <i class="fa fa-caret-down"></i></a>
-                    <ul class="subnav">
+                    <a href="lienhe.html" target="_blank"><span id="lienhe" class="mutilang"></span></a>
+                    <!-- <ul class="subnav">
                         <li><a href=""><span id="gopy" class="mutilang"></span></a></li>
                         <li><a href=""><span id="baohanh" class="mutilang"></span></a></li>
                         <li><a href=""><span id="doitra" class="mutilang"></span></a></li>
-                    </ul>
+                    </ul> -->
                 </li>
             </ul>
             <!--End Nav-->
@@ -95,7 +95,7 @@
                     <hr>
                     <p id="giasp1"class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
-                        <Button onclick="add_cart('idsp1')" class="Buy" ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                        <Button onclick="add_cart('idsp1','slsp1')" class="Buy" ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id='idsp1' style="color: rgb(237, 237, 237);">0</a>
                     <br>
                     <div id="inputsp1" class="inputD">
@@ -110,7 +110,7 @@
                     <p id="giasp2" class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
         
-                        <Button onclick="add_cart('idsp2');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                        <Button onclick="add_cart('idsp2','slsp2');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp2" style="color: rgb(237, 237, 237);"></a>
     
                     <br>
@@ -125,7 +125,7 @@
                     <hr>
                     <p id="giasp3" class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
-                    <Button onclick="add_cart('idsp3');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                    <Button onclick="add_cart('idsp3','slsp3');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp3" style="color: rgb(237, 237, 237);"></a>
                     <br>
                     <div id="inputsp3" class="inputD">
@@ -139,7 +139,7 @@
                     <hr>
                     <p id="giasp4" class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
-                    <Button onclick="add_cart('idsp4');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                    <Button onclick="add_cart('idsp4','slsp4');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp4" style="color: rgb(237, 237, 237);"></a>
                     <br>
                     <div id="inputsp4" class="inputD">
@@ -153,7 +153,7 @@
                     <hr>
                     <p id="giasp5" class="Cost" style="text-align:center"> XXXXX</p>
                     <hr>
-                    <Button onclick="add_cart('idsp5');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                    <Button onclick="add_cart('idsp5','slsp5');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp5" style="color: rgb(237, 237, 237);"></a>
                     <br>
                     <div id="inputsp5" class="inputD">
@@ -167,7 +167,7 @@
                     <hr>
                     <p id="giasp6" class="Cost" style="text-align:center"> XXXXX</p>
                     <hr>
-                    <Button onclick="add_cart('idsp6');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                    <Button onclick="add_cart('idsp6','slsp6');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp6" style="color: rgb(237, 237, 237);"></a>
                     <br>
                     <div id="inputsp6" class="inputD">
@@ -181,7 +181,7 @@
                     <hr>
                     <p id="giasp7" class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
-                    <Button onclick="add_cart('idsp7');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                    <Button onclick="add_cart('idsp7','slsp7');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp7" style="color: rgb(237, 237, 237);"></a>
                     <br>
                     <div id="inputsp7" class="inputD">
@@ -196,7 +196,7 @@
                     <p id="giasp8"  class="Cost" style="text-align:center">XXXXX</p>
                     <hr>
                 
-                        <Button  onclick="add_cart('idsp8');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
+                        <Button  onclick="add_cart('idsp8','slsp8');" class="Buy"  ><i style="color: rgb(255, 255, 255);" class="fa fa-shopping-cart"></i></Button>
                         <a id="idsp8" style="color: rgb(237, 237, 237);"></a>
                     
                     <br>

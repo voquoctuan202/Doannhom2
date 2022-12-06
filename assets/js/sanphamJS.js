@@ -1,40 +1,32 @@
-// document.querySelector("#contentLH form#baoHanh").hidden = true;
-// var selectNode = document.querySelector("#contentLH select")
-// selectNode.addEventListener("change",function()
-// {
-//     var gopY    = document.querySelector("#contentLH form#gopY");
-//     var baoHanh = document.querySelector("#contentLH form#baoHanh");
-//     if(this.value == 2)
-//     {
-//         gopY.hidden     = true;
-//         baoHanh.hidden  = false;
-//     }
-//     else{
-//         gopY.hidden     = false;
-//         baoHanh.hidden  = true;
-//     }
-// });
-
-// Js trang sản phẩm
-
-var lang;
-if(lang === undefined){
+var lang; // Chỉnh ngôn ngữ mặc định là tiếng Việt
+if(lang === undefined){ 
         lang = "vi-vn";
 }
-
-function langVN(){
-        lang = "vi-vn";
-        showNoiChao();
+//Chức năng khi click vào sẽ hiển thị tiếng Việt
+function langVN(code){ 
+        lang = "vi-vn"; // Khi chỉnh tiếng Việt web sẽ reset một số chức năng để hiển thị tiếng Việt
+        if(code===undefined){
+                showNoiChao();
+        }else{
+                showMayDien();
+        }
+        
         mutilang();
         show_cart();
 }
-function langUS(){
-        lang = "en-us";
-        showNoiChao();
+//Chức năng khi click vào sẽ hiển thị tiếng Anh
+function langUS(code){ 
+        lang = "en-us"; // Khi chỉnh tiếng Anh web sẽ reset một số chức năng để hiển thị tiếng Anh
+        if(code===undefined){
+                showNoiChao();
+        }else{
+                showMayDien();
+        }
         mutilang();
         show_cart();
 }
-function ready(){
+// Có chức năng khi load lại web sẽ hiển thị một số thông tin mặc định
+function ready(){ 
     
     if(window.innerWidth < 700){
         $('#mainsanpham').removeClass();
@@ -62,12 +54,13 @@ function ready(){
     langVN();
     showNoiChao();
 }
-function readyGH(){
+// Hiển thị mặc định khi reset trang Giỏ hàng 
+function readyGH(){ 
         mutilang();
     }
 var d = true;
-
-function showNauNuong(){
+// Ẩn hiện thẻ đồ nấu nướng
+function showNauNuong(){ 
     if(d==true){
         $('#shownaunnuong').show();
         $('#iconNN').removeClass();
@@ -80,7 +73,8 @@ function showNauNuong(){
         d=true;
     }
 } 
-var itemSanPham={
+// Lưu các thông tin của các món hàng bằng tiếng Việt và tiếng Anh
+var itemSanPham={ 
         "0":{"vi-vn":{ "name":"NỒI INOX ","price":150000,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
                 "des":"Nồi được làm từ chất liệu inox đẹp mắt bền bỉ theo thời gian"},
              "en-us":{ "name":"POT INOX ","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
@@ -130,131 +124,129 @@ var itemSanPham={
         "8":{   "vi-vn":{ "name":"COMBO 5 MÓN ĐỒ NẤU GỖ ","price":245000,"photo":"assets/img/sanpham/naunuong/combo5MonGo.jpg",
         "des":"Combo 5 món đồ nấu gỗ cao cấp như hình với giá siêu ưu đãi"},
 
-                "en-us":{ "name":"COMBO 5 WOODEN FOOD ","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
+                "en-us":{ "name":"COMBO 5 WOODEN FOOD ","price":13,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
         "des":"Combo of 5 high-class wood cooking utensils as shown in the picture at a super discount"}
         },
         "9":{"vi-vn":{ "name":"COMBO 10 MUỖNG CÀ PHÊ","price":12000,"photo":"assets/img/sanpham/naunuong/ComBo-6-Muong-Ca-Phe.jpg",
         "des":"Muỗng được thiết kế với chất liệu inox không gỉ chắc chắn "},
 
-        "en-us":{ "name":"COMBO 10 Tbsp Coffee","price":32,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "en-us":{ "name":"COMBO 10 Tbsp Coffee","price":1,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
                 "des":"The spoon is designed with sturdy stainless steel material"}
         },
         "10":{"vi-vn":{ "name":"BỘ 5 MUỖNG ĂN CƠM","price":15000,"photo":"assets/img/sanpham/naunuong/combo5muong.jpg",
         "des":"Được làm từ chất liệu inox bền chắc, dễ dàng vệ sinh"},
 
-        "en-us":{ "name":"SET of 5 TABLETS OF RICE","price":62,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"SET of 5 TABLETS OF RICE","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Made of durable stainless steel, easy to clean"}
         },
         "11":{"vi-vn":{ "name":"BỘ 10 MUỖNG NHỰA","price":10000,"photo":"assets/img/sanpham/naunuong/combo10muongnhua.jpg",
         "des":"Bộ gồm 10 muỗng nhựa nhiều màu sắc lựa chọn"},
 
-        "en-us":{ "name":"SET of 10 PLASTIC SPICES","price":40,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"SET of 10 PLASTIC SPICES","price":1,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Set of 10 colorful plastic spoons to choose from"}
         },
         "12":{"vi-vn":{ "name":"BỘ ĐŨA GỖ","price":19000,"photo":"assets/img/sanpham/naunuong/DuaGo.jpg"
         ,"des":"Set includes 10 pairs of wooden chopsticks, high quality Vietnamese goods"},
 
 
-        "en-us":{ "name":"WOODEN DISK SET","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"WOODEN DISK SET","price":1,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Rugged, durable eye-catching design"}
         },
         "13":{"vi-vn":{ "name":"BỘ ĐŨA NHỰA","price":12000,"photo":"assets/img/sanpham/naunuong/DuaNhua.jpg"
         ,"des":"Bộ gồm 10 đôi đũa nhựa sang trọng, chịu được nhệt độ cao"},
 
-                "en-us":{ "name":"PLASTIC DISK SET","price":60,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"PLASTIC DISK SET","price":1,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Set includes 10 pairs of luxury plastic chopsticks, resistant to high temperatures"}
         },
         "14":{"vi-vn":{ "name":"VÁ CANH CAO CẤP","price":100000,"photo":"assets/img/sanpham/naunuong/Muoi-muc-canh-mau-den.jpg",
         "des":"Vá được thiết kế giả đá sang trọng, bằng chất liệu nhựa chịu nhiệt "},
 
 
-                "en-us":{ "name":"PREMIUM SOUND PACK","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"PREMIUM SOUND PACK","price":5,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"The patch is designed with luxurious imitation of stone, made of heat-resistant plastic material"}
         },
         "15":{"vi-vn":{ "name":"VÁ CANH CAO CẤP","price":100000,"photo":"assets/img/sanpham/naunuong/Muoi-muc-canh-mau-den.jpg",
         "des":"Vá được thiết kế giả đá sang trọng, bằng chất liệu nhựa chịu nhiệt "},
-                "en-us":{ "name":"MULTI-USE Frying Patch","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"MULTI-USE Frying Patch","price":5,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"The patch is designed with luxurious imitation of stone, made of heat-resistant plastic material"}
         },
       
 
         "16":{  "vi-vn":{ "name":"NỒI CƠM ĐIỆN SUNHOUSE ","price":850000,"photo":"assets/img/sanpham/noidien/noicomdienSunhouse.jpg", 
         "des":"Nồi cơm điện với dung tích 1.8L phù hợp với gia đình"},
-                "en-us":{ "name":"SUNHOUSE ELECTRIC COOKER ","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
+                "en-us":{ "name":"SUNHOUSE ELECTRIC COOKER ","price":43,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
         "des":"Rice cooker with a capacity of 1.8L is suitable for families"}
         },
-        "17":{"vi-vn":{ "name":"BỘ NỒI SUNHOUSE","price":780000,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "17":{"vi-vn":{ "name":"NỒI CƠM ĐIỆN ZOIJIRUSHI","price":1780000,"photo":"assets/img/sanpham/noidien/noicomdienZojirushi.jpg",
                 "des":"Bộ nồi được làm từ chất liệu inox do hãng Sunhouse sản xuất"},
-        "en-us":{ "name":"ZOJIRUSHI ELECTRIC RICE KITCHEN","price":32,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "en-us":{ "name":"ZOJIRUSHI ELECTRIC RICE KITCHEN","price":82,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
                 "des":"The best selling rice cooker imported from Japan in Vietnam"}
         },
         "18":{"vi-vn":{ "name":"NỒI ÁP SUẤT NAGAKAWA","price":1200000,"photo":"assets/img/sanpham/noidien/noiapsuatNagakawa.jpg",
         "des":"Nồi được sản xuất tại Nhật Bản nhập khẩu chính hãng "},
 
-        "en-us":{ "name":"PRESSURE KITCHEN NAGAKAWA","price":62,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"PRESSURE KITCHEN NAGAKAWA","price":60,"photo":"assets/img/sanpham/noidien/noiapsuatNagakawa.jpg",
                 "des":"The pot is made in Japan and imported genuine"}
         },
         "19":{"vi-vn":{ "name":"NỒI CHIÊN NƯỚNG TEFAL","price":2100000,"photo":"assets/img/sanpham/noidien/noichienTefal.jpg",
         "des":"Nồi nhập khẩu với 2 công dụng chiên và nướng không khói "},
 
-        "en-us":{ "name":"TEFAL GRILL","price":40,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"TEFAL GRILL","price":110,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Imported pot with 2 functions of frying and grilling without smoke"}
         },
         "20":{"vi-vn":{ "name":"BẾP ĐIỆN TỪ MIDEA","price":1900000,"photo":"assets/img/sanpham/noidien/Bep-dien-tu-Midea.jpg",
                 "des":"Bếp có mặt kính chống trầy, tiết kiệm điện"},
 
-        "en-us":{ "name":"ELECTRONIC KITCHEN MIDEA","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"ELECTRONIC KITCHEN MIDEA","price":95,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"The stove has anti-scratch, energy-saving glass"}
         },
         "21":{"vi-vn":{ "name":"BẾP ĐIỆN CANZY","price":2600000,"photo":"assets/img/sanpham/noidien/bepdientuCanzy.jpg",
         "des":"Bếp điện từ Canzy là sản phẩm cao cấp nhập khẩu từ châu Âu"},
 
-                "en-us":{ "name":"ELECTRIC KITCHEN CANZY","price":60,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"ELECTRIC KITCHEN CANZY","price":130,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Canzy induction cooker is a high-class product imported from Europe"}
         },
         "22":{"vi-vn":{ "name":"BẾP GA IKURA","price":900000,"photo":"assets/img/sanpham/noidien/bepgaIkura.jpg",
         "des":"Bếp ga 2 bếp, mặt kính đen bóng loáng sang trọng "},
-                "en-us":{ "name":"IKURA gas stove","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"IKURA gas stove","price":45,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Gas stove with 2 stoves, luxurious glossy black glass"}
         },
         "23":{"vi-vn":{ "name":"LÒ NƯỚNG ALASKA","price":940000,"photo":"assets/img/sanpham/noidien/lonuongAlaska.jpg",
         "des":"Lò nướng alaska loại lò khai nướng, công suất 1500W"},   
-                "en-us":{ "name":"ALASKA Oven Oven","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"ALASKA Oven Oven","price":47,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Alaska oven type oven, capacity 1500W"}
         },
 
 
         "24":{   "vi-vn":{ "name":"MÁY XAY SINH TỐ SUNHOUSE ","price":600000,"photo":"assets/img/sanpham/noidien/May-xay-sinh-to-da-nang-Sunhouse.jpg",
         "des":"Máy xay sinh tố Sunhouse công suất 2000W vô cùng mạnh mẽ, tặng thêm 2 cối xay"},
-                "en-us":{ "name":"SUNHOUSE BLICHER","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
+                "en-us":{ "name":"SUNHOUSE BLICHER","price":30,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
         "des":"Sunhouse blender with a capacity of 2000W is extremely powerful, giving away 2 more mills"}
         },
         "25":{  "vi-vn":{ "name":"MÁY XAY SINH TỐ KANGAROO ","price":550000,"photo":"assets/img/sanpham/noidien/may-xay-sinh-to-kangaroo.jpg",
                 "des":"Máy xay sinh tố Kangaru công suất 1800W , dung tích lớn, tăng thêm 2 cối xay"},
-        "en-us":{ "name":"KANGAROO SUPPLY MACHINE","price":32,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "en-us":{ "name":"KANGAROO SUPPLY MACHINE","price":28,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
                 "des":"Kangaru blender with capacity of 1800W, large capacity, increased by 2 mills"}
         },
         "26":{  "vi-vn":{ "name":"MÁY ÉP TRÁI CÂY COMET","price":750000,"photo":"assets/img/sanpham/noidien/mayeptraicayComet.jpg",
                 "des":"Máy ép trái cây Comet công suất 2000W , ép được hầu hết trái cấy"},
-        "en-us":{ "name":"COMET . juicing machine","price":62,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"COMET . juicing machine","price":38,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Comet fruit juicer 2000W capacity, squeezing most of the transplanted fruit"}
         },
         "27":{"vi-vn":{ "name":"MÁY ÉP TRÁI CÂY PHILIPS","price":700000,"photo":"assets/img/sanpham/noidien/mayeptraicayPhilips.jpg",
                 "des":"Máy ép trái cây Comet công suất 2400W, là sản phẩm bán chạy nhất hiện nay"},
-        "en-us":{ "name":"PHILIPS juicing machine","price":40,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"PHILIPS juicing machine","price":35,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Comet juicer with a capacity of 2400W, the best-selling product today"}
         },
         "28":{"vi-vn":{ "name":"MÁY XAY THỊT MISHIO","price":680000,"photo":"assets/img/sanpham/noidien/mayxaythitMishio.jpg",
         "des":"Máy xay thịt Mishio cối xay được làm từ thủy tinh chắc chắn "},
 
-        "en-us":{ "name":"MISHIO MEAT MACHINE","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"MISHIO MEAT MACHINE","price":34,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Mishio meat grinder mill is made from sturdy glass"}
         },
         "29":{"vi-vn":{ "name":"MÁY RỬA CHÉN MINI","price":4200000,"photo":"assets/img/sanpham/noidien/mayruachenmini.jpeg",
         "des":"Máy rửa chén nhỏ gọn phù hợp với gia đình "},
-
-
-                "en-us":{ "name":"MINI Dishwasher","price":60,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"MINI Dishwasher","price":210,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Compact dishwasher suitable for families"}
         },
         "30":{"vi-vn":{ "name":"MÁY RỬA CHÉN TEKA","price":7000000,"photo":"assets/img/sanpham/noidien/may-rua-chen-teka.jpg",
@@ -262,60 +254,60 @@ var itemSanPham={
 
 
 
-                "en-us":{ "name":"Dishwasher TEKA","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"Dishwasher TEKA","price":350,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Large dishwashers can wash more dishes"}
         },
         "31":{"vi-vn":{ "name":"MÁY RỬA CHÉN CÔNG NGHIỆP","price":15000000,"photo":"assets/img/sanpham/noidien/mayruachencongnhiep.jpg",
         "des":"Máy rửa rất lớn quy mô công nghiệp"},
-                "en-us":{ "name":"INDUSTRIAL Dishwasher","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"INDUSTRIAL Dishwasher","price":750,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Very large industrial-scale washing machine"}
         },
     
 
         "32":{  "vi-vn":{ "name":"CHỔI CỎ QUÉT NHÀ V1","price":30000,"photo":"assets/img/sanpham/vesinh/choi-co-quet-nha.jpg",
         "des":"Chổi cỏ làm thủ công có lượt mua cao nhất"},
-                "en-us":{ "name":"HOME Sweeping Broom V1","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
+                "en-us":{ "name":"HOME Sweeping Broom V1","price":2,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
         "des":"Handmade grass broom has the highest purchase"}
         },
         "33":{"vi-vn":{ "name":"CHỔI CỎ CÁN NHỰA V2","price":35000,"photo":"assets/img/sanpham/vesinh/choicocannhuajpg.jpg",
         "des":"Sản phẩm cải tiến hơn với bảng to và bền hơn"},
 
-        "en-us":{ "name":"BRUSH PLASTIC HANDLE V2","price":32,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "en-us":{ "name":"BRUSH PLASTIC HANDLE V2","price":2,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
                 "des":"Improved product with bigger and more durable boards"}
         },
         "34":{"vi-vn":{ "name":"CHỔI NHỰA CAO CẤP","price":37000,"photo":"assets/img/sanpham/vesinh/Choinhua.jpg",
         "des":"Chổi được làm từ nhựa bền chắc, có thể quét nước"},
 
-        "en-us":{ "name":"PREMIUM PLASTIC BRUSH","price":62,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"PREMIUM PLASTIC BRUSH","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"The broom is made of durable plastic, can sweep water"}
         },
         "35":{"vi-vn":{ "name":"CHỔI QUÉT TRẦN NHÀ","price":70000,"photo":"assets/img/sanpham/vesinh/choi-quet-tran-nha.jpg",
                 "des":"Chổi làm từ nhựa, cây nối có thể kéo dài đến 3m"},
 
-        "en-us":{ "name":"Ceiling Sweeper","price":40,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"Ceiling Sweeper","price":4,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"The broom is made of plastic, the extension tree can extend up to 3m"}
         },
         "36":{"vi-vn":{ "name":"CỌ TOILET NHỰA","price":35000,"photo":"assets/img/sanpham/vesinh/co-toilet-nhua.jpg",
         "des":"Cọ toilet bằng nhựa thiết kế tròn dễ vệ sinh"},
 
-        "en-us":{ "name":"PLASTIC TOILET","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"PLASTIC TOILET","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Plastic toilet brush with round design is easy to clean"}
         },
         "37":{"vi-vn":{ "name":"CỌ ĐA NĂNG NHỰA","price":39000,"photo":"assets/img/sanpham/vesinh/codanang.jpg",
         "des":"Được thiết kế đặc biệt dễ dàng vệ sinh các ngóc ngách của vật dụng"},
-                "en-us":{ "name":"MULTI-FUNCTION PLASTIC DOOR","price":60,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"MULTI-FUNCTION PLASTIC DOOR","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Specially designed for easy cleaning of nooks and crannies"}
         },
         "38":{"vi-vn":{ "name":"BÀN CHẢI NHỰA","price":20000,"photo":"assets/img/sanpham/vesinh/banchainhua.jpg",
         "des":"Bàn chải nhựa dẻo, bệnh bỉ, dễ dàng vệ sinh"},
 
-                "en-us":{ "name":"PLASTIC BRUSH","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"PLASTIC BRUSH","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Plastic brush, durable, easy to clean"}
         },
         "39":{"vi-vn":{ "name":"KHĂN LAU","price":10000,"photo":"assets/img/sanpham/vesinh/khanlau.jpg",
         "des":"Khăn được làm từ vải mềm, thấm nước, khô nhanh"},
 
-                "en-us":{ "name":"WIPER","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"WIPER","price":1,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Towels are made of soft, absorbent, quick-drying fabric"}
         },
 
@@ -323,49 +315,49 @@ var itemSanPham={
         "40":{   "vi-vn":{ "name":"BỘT TẨY RỬA VETO KOREAN","price":120000,"photo":"assets/img/sanpham/vesinh/botayruaveto.jpg",
         "des":"Bột có thể tẩy rửa các vết bẩn cứng đầu, không hại da tay"},
 
-                "en-us":{ "name":"VETO KOREAN WASHING POWDER","price":8,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
+                "en-us":{ "name":"VETO KOREAN WASHING POWDER","price":6,"photo":"assets/img/sanpham/naunuong/noiinox.jpg",
         "des":"Powder can clean stubborn stains, not harmful to hands"}
         },
         "41":{  "vi-vn":{ "name":"BỘ VỆ SINH MÁY GIẶT","price":150000,"photo":"assets/img/sanpham/vesinh/botvesinhlonggiatHanQuoc.jpg",
         "des":"Bột có xuất xứ từ Hàn Quốc có khả năng tẩy sạch lồng giặt"},
 
-        "en-us":{ "name":"WASHING MACHINE CLEANING SET","price":32,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
+        "en-us":{ "name":"WASHING MACHINE CLEANING SET","price":8,"photo":"assets/img/sanpham/naunuong/BoNoiSunHouse.jpg",
                 "des":"Powder from Korea has the ability to clean the washing tub"}
         },
         "42":{  "vi-vn":{ "name":"DUNG DỊCH VỆ SINH TỦ LẠNH","price":90000,"photo":"assets/img/sanpham/vesinh/Dung-dich-ve-sinh-tu-lanh.jpg",
         "des":"Dung dịch chuyên dụng để khử khuẩn, khử mùi cho tủ lạnh"},
 
-        "en-us":{ "name":"Refrigerator cleaning solution","price":62,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"Refrigerator cleaning solution","price":5,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Specialized solution for disinfecting, deodorizing for refrigerators"}
         },
         "43":{"vi-vn":{ "name":"CHAI TẨY RỬA ĐA NĂNG","price":89000,"photo":"assets/img/sanpham/vesinh/tayruadanang.jpg",
         "des":"Tẩy rửa các vết bẩn ở nhà bếp, phòng khách, nhà vệ sinh"},
 
-        "en-us":{ "name":"MULTI-FUNCTIONAL CLEANING BOTTLE","price":40,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"MULTI-FUNCTIONAL CLEANING BOTTLE","price":5,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Cleaning stains in the kitchen, living room, toilet"}
         },
         "44":{"vi-vn":{ "name":"TẨY CẶN CANXI JULI","price":80000,"photo":"assets/img/sanpham/vesinh/taycancanxi.jpg",
         "des":"Dung dịch chuyên dụng tẩy các mảng cặn canxi bám lâu ngày"},
 
 
-        "en-us":{ "name":"CALCIUM CLEANING JULI","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+        "en-us":{ "name":"CALCIUM CLEANING JULI","price":4,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
                 "des":"Specialized solution to remove long-standing calcium deposits"}
         },
         "45":{"vi-vn":{ "name":"NƯỚC RỬA KÍNH GIFT","price":35000,"photo":"assets/img/sanpham/vesinh/nuocruakinh.jpg",
         "des":"Nước rửa kính được dùng nhiều nhất Việt Nam"},
 
-                "en-us":{ "name":"GIFT . GLASS WASHING WATER","price":60,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"GIFT . GLASS WASHING WATER","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"The most used glass cleaner in Vietnam"}
         },
         "46":{"vi-vn":{ "name":"NƯỚC RỬA TAY ZYTO","price":40000,"photo":"assets/img/sanpham/vesinh/nuocruatayZYTO.jpg",
         "des":"Nước rửa tay với mùi thơm dễ chịu diệt được 99% vi khuẩn"},
 
-                "en-us":{ "name":"ZYTO HAND Sanitizer","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"ZYTO HAND Sanitizer","price":2,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Hand sanitizer with pleasant fragrance kills 99% of bacteria"}
         },
         "47":{"vi-vn":{ "name":"VIM ZERO TOILET CLEANING","price":52000,"photo":"assets/img/sanpham/vesinh/vim.jpg",
         "des":"Vim được bình chọn là nước tẩy bồn cầu tốt nhất hiện nay"},
-                "en-us":{ "name":"INDUSTRIAL Dishwasher","price":15,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
+                "en-us":{ "name":"INDUSTRIAL Dishwasher","price":3,"photo":"assets/img/sanpham/naunuong/bonoipremium.jpg",
         "des":"Vim was voted as the best toilet cleaner today"}
         },
         "tien":{
@@ -374,6 +366,7 @@ var itemSanPham={
         }
 
 }
+// Lưu các văn bản tiếng Việt và tiếng Anh ở một số mục
 var labels={
         "trangchu":{
                 "vi-vn": "Trang chủ",
@@ -517,6 +510,7 @@ var labels={
         },
 
 }
+// Chức năng hiển thị đa ngôn ngữ dựa vào biến lang
 function mutilang(){
         $("#trangchu").html(labels["trangchu"][lang]).attr("title",labels["trangchu"][lang]);
         $("#sanpham").html(labels["sanpham"][lang]).attr("title",labels["sanpham"][lang]);
@@ -554,6 +548,7 @@ function mutilang(){
         $("#xacnhanG").html(labels["xacnhanG"][lang]).attr("title",labels["xacnhanG"][lang]);
         $("#tensanphamG").html(labels["tensanphamG"][lang]).attr("title",labels["tensanphamG"][lang]);
 }
+// Show ra các sản phẩm thuộc nhóm Nồi chảo
 function showNoiChao(){   
     
     
@@ -603,7 +598,7 @@ function showNoiChao(){
    $("#idsp7").html(6);
    $("#idsp8").html(7);
 }
-
+// Show ra các sản phẩm thuộc nhóm Muỗng đũa
 function showMuongDua(){
    
     
@@ -654,7 +649,7 @@ function showMuongDua(){
    $("#idsp8").html("15");
 }
 var dD= true;
-
+// Ẩn hiện thẻ Đồ điện tử
 function showDienTu(){
     if(dD==true){
         $('#showdientu').show();
@@ -668,6 +663,7 @@ function showDienTu(){
         dD= true;
     }
 }
+// Show ra các sản phẩm thuộc nhóm Nồi điện
 function showNoiDien(){   
    
     
@@ -717,7 +713,7 @@ function showNoiDien(){
    $("#idsp7").html("22");
    $("#idsp8").html("23");
 }
-
+// Show ra các sản phẩm thuộc nhóm Máy điện
 function showMayDien(){
     
     
@@ -768,6 +764,7 @@ function showMayDien(){
    $("#idsp8").html("31");
 }
 var dVS= true;
+// Ẩn hiện thẻ Dụng cụ vệ sinh
 function showVeSinh(){
     if(dVS==true){
         $('#showvesinh').show();
@@ -781,6 +778,7 @@ function showVeSinh(){
         dVS= true;
     }
 }
+// Show ra các sản phẩm thuộc nhóm Dụng cụ
 function showDungCu(){   
     
     
@@ -830,7 +828,7 @@ function showDungCu(){
    $("#idsp7").html("38");
    $("#idsp8").html("38");
 }
-
+// Show ra các sản phẩm thuộc nhóm Dung dịch
 function showDungDich(){
     
     $('#tensp1').html(itemSanPham[40][lang].name);
@@ -879,11 +877,12 @@ function showDungDich(){
    $("#idsp7").html("46");
    $("#idsp8").html("47");
 }
-
-function add_cart(code){
+// Thêm sản phẩm và số lượng sản phẩm khi người dụng chọn add_cart()
+function add_cart(code,codesl){
  var id = document.getElementById(code).innerHTML;
- var idsl = Number.parseInt(id) + 1;
- var sl= document.getElementById("slsp"+idsl+"").value; 
+ 
+ var sl= document.getElementById(codesl).value; 
+ console.log(id + " "+ sl);
  if(sl<1)
     alert('Vui lòng chọn số lượng cho sản phẩm');
     else{
@@ -896,13 +895,13 @@ function add_cart(code){
         
     }
 }
-
+// Xóa các sản phẩm chỉ định ở trang Giỏ hàng
 function removerow(code){
         console.log(code);
         window.localStorage.removeItem(code); 
         show_cart();
 }
-
+// Hiển thị các sản phẩm đã được thêm vào giỏ
 function show_cart(){
         
         var sum =0;
